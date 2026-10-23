@@ -1,0 +1,20 @@
+type Option {
+    codeOption:Int libelle:String domaine:String responsable:String
+    credits:Int semestre:Int capacite:Int
+}
+type Etudiant {
+    identifiant:String nom:String prenom:String
+    option:Option anneeEtude:Int email:String
+}
+type Queries {
+    getAllOptions:[Option]
+}
+type Mutations {
+    ajouterOption(codeOption:Int,libelle:String,domaine:String,responsable:String,credits:Int,semestre:Int,capacite:Int):Boolean
+}
+schema {
+    query: Queries
+    mutation: Mutations
+
+}
+#commentaire
