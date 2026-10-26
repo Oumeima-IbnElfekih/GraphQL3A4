@@ -8,9 +8,15 @@ type Etudiant {
 }
 type Queries {
     getAllOptions:[Option]
+    getlisteOptionBydomaine(domaine:String):[Option]
+    getOptionById(id:Int):Option
+    getEtudiantByid(id:String):Etudiant
 }
 type Mutations {
     ajouterOption(codeOption:Int,libelle:String,domaine:String,responsable:String,credits:Int,semestre:Int,capacite:Int):Boolean
+    modifierOption(codeOption:Int,libelle:String,domaine:String,responsable:String,credits:Int,semestre:Int,capacite:Int):String
+    supprimerOption(codeOption:Int):Boolean
+    ajouterEtudiant(identifiant:String,nom:String,prenom:String,codeOption:Int,anneEtude:Int,email:String):String
 }
 schema {
     query: Queries
